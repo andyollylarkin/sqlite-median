@@ -1,10 +1,10 @@
 #include <sqlite3ext.h>
-SQLITE_EXTENSION_INIT1
 #include <stdio.h>
 
 #include <stdlib.h>
 
-// Структура для хранения данных для вычисления медианы в окне
+SQLITE_EXTENSION_INIT1
+
 typedef struct
 {
 	double *values;
@@ -19,7 +19,6 @@ static void window_add_value(MedianWindowData *data, double value)
 	data->count++;
 }
 
-// Функция для сравнения значений для сортировки
 static int window_compare_doubles(const void *a, const void *b)
 {
 	double arg1 = *(const double *)a;
